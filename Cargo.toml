@@ -1,6 +1,8 @@
 [package]
 name = "go-rs"
 version = "0.1.0"
-authors = ["Felix Terkhorn <felixt@cakesolutions.net>"]
+authors = ["Terkwood"]
 
 [dependencies]
+ggez = "0.4.3"
+imgui = "0.0.18"

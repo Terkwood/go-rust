@@ -13,11 +13,13 @@ mod pixel_math {
         (SCREEN_SIZE.1 - MARGIN.1 * 2.0) / 3.0,
     );
 
-    pub const COLUMNS: (f32, f32) = (MARGIN.0 + POSITION_SIZE.0, MARGIN.0 + POSITION_SIZE.0 * 2.0);
+    const BOARD_SIZE = 19;
 
-    pub const ROWS: (f32, f32) = (MARGIN.1 + POSITION_SIZE.1, MARGIN.1 + POSITION_SIZE.1 * 2.0);
+    pub const COLUMNS: [f32] = (MARGIN.0 + POSITION_SIZE.0, MARGIN.0 + POSITION_SIZE.0 * 2.0);
 
-    pub const X_PIECE_OFFSET: (f32, f32) =
+    pub const ROWS: [f32] = (MARGIN.1 + POSITION_SIZE.1, MARGIN.1 + POSITION_SIZE.1 * 2.0);
+
+    pub const X_PIECE_OFFSET: [f32] =
         (POSITION_SIZE.0 / 2.0 * 0.70, POSITION_SIZE.1 / 2.0 * 0.70);
 
     pub fn screen_to_board(x: f32, y: f32) -> Option<(u16, u16)> {

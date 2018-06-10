@@ -24,8 +24,8 @@ pub fn add_background_to_mesh(mb: &mut MeshBuilder) {
     for r in rows {
         mb.line(
             &[
-                Point2::new(MARGIN.0, r),
-                Point2::new(SCREEN_SIZE.0 - MARGIN.0 - POSITION_SIZE.0, r),
+                Point2::new(MARGIN.0 + POSITION_SIZE.0 / 2.0, r + POSITION_SIZE.1 / 2.0),
+                Point2::new(SCREEN_SIZE.0 - MARGIN.0 - POSITION_SIZE.0 / 2.0, r + POSITION_SIZE.1 / 2.0),
             ],
             LINE_WIDTH,
         );
@@ -34,8 +34,8 @@ pub fn add_background_to_mesh(mb: &mut MeshBuilder) {
     for c in columns {
         mb.line(
             &[
-                Point2::new(c, MARGIN.1),
-                Point2::new(c, SCREEN_SIZE.1 - MARGIN.1 - POSITION_SIZE.1),
+                Point2::new(c + POSITION_SIZE.0 / 2.0, MARGIN.1 + POSITION_SIZE.1 / 2.0),
+                Point2::new(c + POSITION_SIZE.0 / 2.0, SCREEN_SIZE.1 - MARGIN.1 - POSITION_SIZE.1 / 2.0),
             ],
             LINE_WIDTH,
         );

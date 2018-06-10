@@ -1,8 +1,23 @@
 extern crate ggez;
 
-use draw::ggez::graphics::{MeshBuilder, Point2};
+use ggez::{Context, GameResult};
+use ggez::graphics::{Mesh, MeshBuilder, Point2};
+use game::Board;
 use pixel_math;
 use pixel_math::{MARGIN, SCREEN_SIZE};
+
+pub fn build_game_mesh(
+    ctx: &mut Context,
+    board: &Board
+) -> GameResult<Mesh> {
+    let mb = &mut MeshBuilder::new();
+
+    add_background_to_mesh(mb);
+
+    //add_pieces_to_mesh(mb, board);
+
+    mb.build(ctx)
+}
 
 pub fn add_background_to_mesh(mb: &mut MeshBuilder) {
     let rows = pixel_math::rows();

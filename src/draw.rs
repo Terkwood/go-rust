@@ -1,7 +1,8 @@
 extern crate ggez;
 
 use game::Board;
-use ggez::graphics::{Mesh, MeshBuilder, Point2};
+use ggez::graphics;
+use ggez::graphics::{DrawMode, Mesh, MeshBuilder, Point2};
 use ggez::{Context, GameResult};
 use pixel_math;
 use pixel_math::{MARGIN, POSITION_SIZE, SCREEN_SIZE};
@@ -9,14 +10,30 @@ use pixel_math::{MARGIN, POSITION_SIZE, SCREEN_SIZE};
 pub fn build_game_mesh(ctx: &mut Context, board: &Board) -> GameResult<Mesh> {
     let mb = &mut MeshBuilder::new();
 
-    add_background_to_mesh(mb);
+    add_grid_to_mesh(mb);
 
     //add_pieces_to_mesh(mb, board);
 
     mb.build(ctx)
 }
 
-pub fn add_background_to_mesh(mb: &mut MeshBuilder) {
+pub fn add_board_background(ctx: &mut Context) {
+    const BEIGE: (u8, u8, u8) = (245, 245, 220);
+    graphics::set_color(ctx, BEIGE.into());
+    let rect = graphics::Rect::new(450.0, 450.0, 500.0, 500.0);
+    graphics::rectangle(ctx, graphics::DrawMode::Fill, rect);
+    /*mb.polygon(DrawMode::Fill, &[
+                Point2::new(MARGIN.0, MARGIN.1),
+                Point2::new(SCREEN_SIZE.0 - MARGIN.0, MARGIN.1),
+                Point2::new(SCREEN_SIZE.0 - MARGIN.0, SCREEN_SIZE.1 - MARGIN.1),
+                Point2::new(MARGIN.0, SCREEN_SIZE.1 - MARGIN.1),
+            ]);*/
+
+}
+
+pub fn add_grid_to_mesh(mb: &mut MeshBuilder) {
+    
+
     let rows = pixel_math::rows();
     let columns = pixel_math::columns();
     const LINE_WIDTH: f32 = 4.0;

@@ -29,6 +29,16 @@ pub struct MainState {
     board: Board,
     current_turn: Piece,
 }
+impl MainState {
+    pub fn new(_ctx: &mut Context) -> GameResult<MainState> {
+        let s = MainState {
+            board: Board::new(),
+            current_turn: Piece::Black,
+        };
+
+        Ok(s)
+    }
+}
 
 impl event::EventHandler for MainState {
     fn update(&mut self, ctx: &mut Context) -> GameResult<()> {

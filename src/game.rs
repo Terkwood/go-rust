@@ -25,7 +25,7 @@ impl Board {
         Board { contents: v }
     }
 }
-struct MainState {
+pub struct MainState {
     board: Board,
     current_turn: Piece,
 }

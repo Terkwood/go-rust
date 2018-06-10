@@ -8,8 +8,8 @@ pub const MARGIN: (f32, f32) = (
 );
 
 pub const POSITION_SIZE: (f32, f32) = (
-    (SCREEN_SIZE.0 - MARGIN.0 * 2.0) / 3.0,
-    (SCREEN_SIZE.1 - MARGIN.1 * 2.0) / 3.0,
+    (SCREEN_SIZE.0 - MARGIN.0 * 2.0) / BOARD_SIZE as f32,
+    (SCREEN_SIZE.1 - MARGIN.1 * 2.0) / BOARD_SIZE as f32,
 );
 
 pub const BOARD_SIZE: usize = 19;

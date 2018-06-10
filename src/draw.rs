@@ -4,7 +4,7 @@ use draw::ggez::graphics::{MeshBuilder, Point2};
 use pixel_math;
 use pixel_math::{MARGIN, SCREEN_SIZE};
 
-fn add_background_to_mesh(mb: &mut MeshBuilder) {
+pub fn add_background_to_mesh(mb: &mut MeshBuilder) {
     let rows = pixel_math::rows();
     let columns = pixel_math::columns();
     const LINE_WIDTH: f32 = 4.0;

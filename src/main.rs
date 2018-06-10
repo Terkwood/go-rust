@@ -14,9 +14,12 @@ use std::env;
 use std::path;
 
 fn main() {
-    let mut cb = ContextBuilder::new("Go", "ggez")
+    let cb = ContextBuilder::new("Go", "ggez")
         .window_setup(conf::WindowSetup::default().title("Go: The Way of the Warrior"))
-        .window_mode(conf::WindowMode::default().dimensions(pixel_math::SCREEN_SIZE.0 as u32, pixel_math::SCREEN_SIZE.1 as u32));
+        .window_mode(conf::WindowMode::default().dimensions(
+            pixel_math::SCREEN_SIZE.0 as u32,
+            pixel_math::SCREEN_SIZE.1 as u32,
+        ));
 
     let ctx = &mut cb.build().unwrap();
 

@@ -53,12 +53,11 @@ impl event::EventHandler for MainState {
     fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
         graphics::clear(ctx);
         
-        draw::add_board_background(ctx);
+        draw::add_board_background(ctx)?;
 
-        const CYAN: (u8, u8, u8) = (0, 255, 255);
-        
+        const BLACK: (u8, u8, u8) = (0, 0, 0);
         let game_mesh = draw::build_game_mesh(ctx, &self.board)?;
-        graphics::set_color(ctx, CYAN.into())?;
+        graphics::set_color(ctx, BLACK.into())?;
         graphics::draw_ex(ctx, &game_mesh, Default::default())?;
 
         graphics::present(ctx);

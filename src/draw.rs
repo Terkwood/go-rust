@@ -17,18 +17,11 @@ pub fn build_game_mesh(ctx: &mut Context, board: &Board) -> GameResult<Mesh> {
     mb.build(ctx)
 }
 
-pub fn add_board_background(ctx: &mut Context) {
+pub fn add_board_background(ctx: &mut Context) -> GameResult<()> {
     const BEIGE: (u8, u8, u8) = (245, 245, 220);
-    graphics::set_color(ctx, BEIGE.into());
-    let rect = graphics::Rect::new(450.0, 450.0, 500.0, 500.0);
-    graphics::rectangle(ctx, graphics::DrawMode::Fill, rect);
-    /*mb.polygon(DrawMode::Fill, &[
-                Point2::new(MARGIN.0, MARGIN.1),
-                Point2::new(SCREEN_SIZE.0 - MARGIN.0, MARGIN.1),
-                Point2::new(SCREEN_SIZE.0 - MARGIN.0, SCREEN_SIZE.1 - MARGIN.1),
-                Point2::new(MARGIN.0, SCREEN_SIZE.1 - MARGIN.1),
-            ]);*/
-
+    graphics::set_color(ctx, BEIGE.into())?;
+    let rect = graphics::Rect::new(MARGIN.0, MARGIN.1, SCREEN_SIZE.0 - MARGIN.0 * 2.0, SCREEN_SIZE.1 - MARGIN.1 * 2.0);
+    graphics::rectangle(ctx, graphics::DrawMode::Fill, rect)
 }
 
 pub fn add_grid_to_mesh(mb: &mut MeshBuilder) {

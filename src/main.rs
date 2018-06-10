@@ -9,24 +9,11 @@ use game::{MainState, BOARD_SIZE};
 use ggez::conf;
 use ggez::event;
 use ggez::graphics;
-use ggez::timer;
-use ggez::{Context, GameResult};
+use ggez::Context;
 use std::env;
 use std::path;
 
 fn main() {
-    println!("board size is {}", BOARD_SIZE);
-
-    let rows = pixel_math::rows();
-    for (i, r) in rows.iter().enumerate() {
-        println!("row {} {}", i, r);
-    }
-
-    let columns = pixel_math::columns();
-    for (j, c) in columns.iter().enumerate() {
-        println!("col {} {}", j, c);
-    }
-
     let c = conf::Conf::new();
     let ctx = &mut Context::load_from_conf("go", "ggez", c).unwrap();
 

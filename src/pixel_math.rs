@@ -14,15 +14,17 @@ pub const POSITION_SIZE: (f32, f32) = (
 
 pub const BOARD_SIZE: usize = 19;
 
-pub fn columns() -> Vec<f32> { 
-    (0..BOARD_SIZE).map(|i| 
-        MARGIN.0 + POSITION_SIZE.0 * (i as f32 + 1.0)
-    ).collect::<Vec<f32>>()
+pub fn columns() -> Vec<f32> {
+    (0..BOARD_SIZE)
+        .map(|i| MARGIN.0 + POSITION_SIZE.0 * (i as f32 + 1.0))
+        .collect::<Vec<f32>>()
 }
 
-pub fn rows() -> Vec<f32> { (0..BOARD_SIZE).map(|j|
-   MARGIN.1 + POSITION_SIZE.1 * (j as f32 + 1.0)
-).collect::<Vec<f32>>() }
+pub fn rows() -> Vec<f32> {
+    (0..BOARD_SIZE)
+        .map(|j| MARGIN.1 + POSITION_SIZE.1 * (j as f32 + 1.0))
+        .collect::<Vec<f32>>()
+}
 
 pub fn screen_to_board(x: f32, y: f32) -> Option<(u16, u16)> {
     if x < MARGIN.0 || x > SCREEN_SIZE.0 - MARGIN.0 {

@@ -9,13 +9,16 @@ use game::{MainState, BOARD_SIZE};
 use ggez::conf;
 use ggez::event;
 use ggez::graphics;
-use ggez::Context;
+use ggez::{Context, ContextBuilder};
 use std::env;
 use std::path;
 
 fn main() {
-    let c = conf::Conf::new();
-    let ctx = &mut Context::load_from_conf("go", "ggez", c).unwrap();
+    let mut cb = ContextBuilder::new("Go", "ggez")
+        .window_setup(conf::WindowSetup::default().title("Go: The Way of the Warrior"))
+        .window_mode(conf::WindowMode::default().dimensions(pixel_math::SCREEN_SIZE.0 as u32, pixel_math::SCREEN_SIZE.1 as u32));
+
+    let ctx = &mut cb.build().unwrap();
 
     // We add the CARGO_MANIFEST_DIR/resources do the filesystems paths so
     // we we look in the cargo project for files.

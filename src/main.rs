@@ -1,3 +1,4 @@
+mod draw;
 mod pixel_math;
 use pixel_math::BOARD_SIZE;
 

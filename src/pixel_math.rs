@@ -16,13 +16,13 @@ pub const BOARD_SIZE: usize = 19;
 
 pub fn columns() -> Vec<f32> {
     (0..BOARD_SIZE)
-        .map(|i| MARGIN.0 + POSITION_SIZE.0 * (i as f32 + 1.0))
+        .map(|i| MARGIN.0 + POSITION_SIZE.0 * i as f32)
         .collect::<Vec<f32>>()
 }
 
 pub fn rows() -> Vec<f32> {
     (0..BOARD_SIZE)
-        .map(|j| MARGIN.1 + POSITION_SIZE.1 * (j as f32 + 1.0))
+        .map(|j| MARGIN.1 + POSITION_SIZE.1 * j as f32)
         .collect::<Vec<f32>>()
 }
 

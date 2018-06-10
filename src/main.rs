@@ -28,6 +28,4 @@ fn main() {
     for (j, c) in columns.iter().enumerate() {
         println!("col {} {}", j, c);
     }
-
-
 }

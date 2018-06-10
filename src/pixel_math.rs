@@ -15,7 +15,9 @@ mod pixel_math {
 
     const BOARD_SIZE = 19;
 
-    pub const COLUMNS: [f32] = (MARGIN.0 + POSITION_SIZE.0, MARGIN.0 + POSITION_SIZE.0 * 2.0);
+    pub const COLUMNS: [f32] = (0..BOARD_SIZE).map(|i| 
+        (MARGIN.0 + POSITION_SIZE.0 * (i + 1.0))
+    );
 
     pub const ROWS: [f32] = (MARGIN.1 + POSITION_SIZE.1, MARGIN.1 + POSITION_SIZE.1 * 2.0);
 

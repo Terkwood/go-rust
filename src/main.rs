@@ -4,7 +4,7 @@ mod draw;
 mod game;
 mod pixel_math;
 
-use game::{BOARD_SIZE, MainState};
+use game::{MainState, BOARD_SIZE};
 
 use ggez::conf;
 use ggez::event;
@@ -45,5 +45,4 @@ fn main() {
     } else {
         println!("Game exited cleanly.");
     }
-    
 }

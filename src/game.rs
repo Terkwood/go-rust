@@ -63,5 +63,3 @@ impl event::EventHandler for MainState {
         Ok(())
     }
 }
-
-

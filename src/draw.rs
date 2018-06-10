@@ -1,15 +1,12 @@
 extern crate ggez;
 
-use ggez::{Context, GameResult};
-use ggez::graphics::{Mesh, MeshBuilder, Point2};
 use game::Board;
+use ggez::graphics::{Mesh, MeshBuilder, Point2};
+use ggez::{Context, GameResult};
 use pixel_math;
 use pixel_math::{MARGIN, SCREEN_SIZE};
 
-pub fn build_game_mesh(
-    ctx: &mut Context,
-    board: &Board
-) -> GameResult<Mesh> {
+pub fn build_game_mesh(ctx: &mut Context, board: &Board) -> GameResult<Mesh> {
     let mb = &mut MeshBuilder::new();
 
     add_background_to_mesh(mb);

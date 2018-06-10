@@ -52,7 +52,7 @@ impl event::EventHandler for MainState {
 
     fn draw(&mut self, ctx: &mut Context) -> GameResult<()> {
         graphics::clear(ctx);
-        
+
         draw::add_board_background(ctx)?;
 
         const BLACK: (u8, u8, u8) = (0, 0, 0);

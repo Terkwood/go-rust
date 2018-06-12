@@ -32,7 +32,7 @@ pub fn add_board_background(ctx: &mut Context) -> GameResult<()> {
 pub fn add_grid_to_mesh(mb: &mut MeshBuilder) {
     let rows = pixel_math::rows();
     let columns = pixel_math::columns();
-    const LINE_WIDTH: f32 = 4.0;
+    const LINE_WIDTH: f32 = 2.0;
 
     for r in rows {
         mb.line(

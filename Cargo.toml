@@ -6,3 +6,4 @@ authors = ["Terkwood"]
 [dependencies]
 ggez = "0.4.3"
 imgui = "0.0.18"
+lazy_static = "1.0"

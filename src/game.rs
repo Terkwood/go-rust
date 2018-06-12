@@ -9,6 +9,20 @@ use ggez::{Context, GameResult};
 
 pub const BOARD_SIZE: usize = 19;
 
+lazy_static! {
+    static ref HANDICAPS: Vec<(u16, u16)> = vec![
+        (3, 3),
+        (3, 9),
+        (3, 15),
+        (3, 9),
+        (9, 9),
+        (15, 9),
+        (3, 15),
+        (9, 15),
+        (15, 15),
+    ];
+}
+
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum Piece {
     Black,

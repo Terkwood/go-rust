@@ -1,4 +1,6 @@
 extern crate ggez;
+#[macro_use]
+extern crate lazy_static;
 
 mod draw;
 mod game;

@@ -1,6 +1,6 @@
 extern crate ggez;
 
-use game::Board;
+use game::{Board, HANDICAPS};
 use ggez::graphics;
 use ggez::graphics::{DrawMode, Mesh, MeshBuilder, Point2};
 use ggez::{Context, GameResult};
@@ -59,4 +59,8 @@ pub fn add_grid_to_mesh(mb: &mut MeshBuilder) {
     }
 }
 
-pub fn add_handicaps_to_mesh(mb: &mut MeshBuilder) {}
+pub fn add_handicaps_to_mesh(mb: &mut MeshBuilder) {
+    for (i, j) in HANDICAPS.iter() {
+        // TODO
+    }
+}

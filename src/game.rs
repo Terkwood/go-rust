@@ -10,7 +10,7 @@ use ggez::{Context, GameResult};
 pub const BOARD_SIZE: usize = 19;
 
 lazy_static! {
-    static ref HANDICAPS: Vec<(u16, u16)> = vec![
+    pub static ref HANDICAPS: Vec<(u16, u16)> = vec![
         (3, 3),
         (3, 9),
         (3, 15),

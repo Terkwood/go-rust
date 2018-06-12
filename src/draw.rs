@@ -30,11 +30,9 @@ pub fn add_board_background(ctx: &mut Context) -> GameResult<()> {
 }
 
 pub fn add_grid_to_mesh(mb: &mut MeshBuilder) {
-    let rows = pixel_math::rows();
-    let columns = pixel_math::columns();
     const LINE_WIDTH: f32 = 2.0;
 
-    for r in rows {
+    for r in pixel_math::ROWS.iter() {
         mb.line(
             &[
                 Point2::new(MARGIN.0 + POSITION_SIZE.0 / 2.0, r + POSITION_SIZE.1 / 2.0),
@@ -47,7 +45,7 @@ pub fn add_grid_to_mesh(mb: &mut MeshBuilder) {
         );
     }
 
-    for c in columns {
+    for c in pixel_math::COLUMNS.iter() {
         mb.line(
             &[
                 Point2::new(c + POSITION_SIZE.0 / 2.0, MARGIN.1 + POSITION_SIZE.1 / 2.0),
@@ -60,3 +58,5 @@ pub fn add_grid_to_mesh(mb: &mut MeshBuilder) {
         );
     }
 }
+
+pub fn add_handicaps_to_mesh(mb: &mut MeshBuilder) {}
